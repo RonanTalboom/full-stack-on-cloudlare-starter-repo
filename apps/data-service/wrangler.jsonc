@@ -14,6 +14,9 @@
 	"browser": {
 		"binding": "VIRTUAL_BROWSER",
 	},
+	"ai": {
+		"binding": "AI",
+	},
 	"d1_databases": [
 		{
 			"binding": "DB",
@@ -48,7 +51,29 @@
 			"name": "destination-evaluation-workflow",
 			"class_name": "DestinationEvaluationWorkflow"
 		}
+	],
+		"r2_buckets": [
+		{
+			"binding": "BUCKET",
+			"bucket_name": "smart-links-eval-stage",
+
+		}
+	],
+	"durable_objects": {
+		"bindings": [
+			{
+				"name": "EVALUATION_SCHEDULAR",
+				"class_name": "EvaluationScheduler"
+			}
+		]
+	},
+	"migrations": [
+		{
+			"tag": "v1",
+			"new_classes": ["EvaluationScheduler"]
+		}
 	]
+
 
 
 
