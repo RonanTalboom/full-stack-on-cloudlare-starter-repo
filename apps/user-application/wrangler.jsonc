@@ -21,5 +21,12 @@
 			"experimental_remote": true
 
 		}
-	]
+	],
+  "services": [
+    {
+      "binding": "BACKEND_SERVICE",
+      "service": "data-service",
+      "experimental_remote": true
+    }
+  ]
 }
