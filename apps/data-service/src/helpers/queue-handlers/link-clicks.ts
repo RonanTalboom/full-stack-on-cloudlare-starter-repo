@@ -4,6 +4,6 @@ import { LinkClickMessageType } from "@repo/data-ops/zod-schema/queue";
 
 
 export async function handleLinkClick(env: Env, event: LinkClickMessageType) {
-	await addLinkClick(event.data);
 	await scheduleEvalWorkflow(env, event)
+	await addLinkClick(event.data);
 }
