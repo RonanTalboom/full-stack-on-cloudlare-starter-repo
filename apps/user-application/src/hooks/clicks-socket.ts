@@ -14,9 +14,15 @@ export function useClickSocket() {
 
   useEffect(() => {
     const connect = () => {
-      const protocol = window.location.protocol === "https:" ? "wss:" : "ws:";
+      const protocol = window.location.protocol === "https:" ? "wss:" : "wss:";
       const socket = new WebSocket(
-        `${protocol}//${import.meta.env.VITE_BASE_HOST}/click-socket`,
+        `${protocol}//data-service.ronantalboom.workers.dev/click-socket`,
+        [],
+        {
+          headers: {
+            'account-id': 'default-account'
+          }
+        } as any
       );
 
       socket.onopen = () => {
