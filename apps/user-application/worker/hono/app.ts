@@ -21,3 +21,11 @@ App.get("/click-socket", async (c) => {
   const proxiedRequest = new Request(c.req.raw, { headers });
   return c.env.BACKEND_SERVICE.fetch(proxiedRequest);
 });
+
+App.on(["POST", "GET"], "/api/auth/*", (c) => {
+  const auth = getAuth({
+    clientId: c.env.GOOGLE_CLIENT_ID,
+    clientSecret: c.env.GOOGLE_CLIENT_SECRET
+  })
+	return auth.handler(c.req.raw);
+});

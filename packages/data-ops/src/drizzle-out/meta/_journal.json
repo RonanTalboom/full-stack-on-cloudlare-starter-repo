@@ -8,6 +8,13 @@
       "when": 1756242140612,
       "tag": "0000_bizarre_tigra",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1756283791120,
+      "tag": "0001_superb_glorian",
+      "breakpoints": true
     }
   ]
 }
