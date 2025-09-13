@@ -44,7 +44,7 @@
         {
           "binding": "BACKEND_SERVICE",
           "service": "data-service-production",
-        }
+         }
       ]
     }
   }

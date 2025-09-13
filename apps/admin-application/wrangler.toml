@@ -1,0 +1,40 @@
+name = "admin-application"
+compatibility_date = "2025-06-17"
+compatibility_flags = ["nodejs_compat"]
+pages_build_output_dir = ".vercel/output/static"
+
+[observability]
+enabled = true
+
+# Development bindings
+[[d1_databases]]
+binding = "DB"
+database_id = "802af336-6014-4ca1-a496-c967434bdd21"
+
+[[services]]
+binding = "BACKEND_SERVICE"
+service = "data-service-stage"
+
+# Stage environment
+[env.stage]
+name = "admin-application-stage"
+
+[[env.stage.d1_databases]]
+binding = "DB"
+database_id = "802af336-6014-4ca1-a496-c967434bdd21"
+
+[[env.stage.services]]
+binding = "BACKEND_SERVICE"
+service = "data-service-stage"
+
+# Production environment
+[env.production]
+name = "admin-application-production"
+
+[[env.production.d1_databases]]
+binding = "DB"
+database_id = "471ec3b2-4b51-43e2-bef7-2e2ab618b2f0"
+
+[[env.production.services]]
+binding = "BACKEND_SERVICE"
+service = "data-service-production"
